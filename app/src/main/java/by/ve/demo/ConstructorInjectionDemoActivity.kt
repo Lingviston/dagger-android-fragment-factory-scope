@@ -2,7 +2,9 @@ package by.ve.demo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import by.ve.demo.di.dependencies.ActivityScopedDependency
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.activity_fragments_demo.activityDependency
 import javax.inject.Inject
 
 
@@ -11,11 +13,16 @@ class ConstructorInjectionDemoActivity : AppCompatActivity() {
     @Inject
     lateinit var scopedFragmentFactory: ScopedFragmentFactory
 
+    @Inject
+    lateinit var activityScopedDependency: ActivityScopedDependency
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         supportFragmentManager.fragmentFactory = scopedFragmentFactory
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragments_demo)
+
+        activityDependency.text = activityScopedDependency.describe()
 
         if (savedInstanceState == null) {
             supportFragmentManager

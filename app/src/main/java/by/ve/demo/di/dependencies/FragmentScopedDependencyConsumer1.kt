@@ -7,5 +7,5 @@ class FragmentScopedDependencyConsumer1 @Inject constructor(
     private val dependency: FragmentScopedDependency
 ) : PrintableDependency {
 
-    override fun describe() = "${super.describe()}\n    - ${dependency.describe()}"
+    override fun describe() = "${super.describe()}\n    ${dependency.describe()}"
 }
