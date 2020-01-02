@@ -3,7 +3,8 @@ package by.ve.demo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.startDemoButton
+import kotlinx.android.synthetic.main.activity_main.startConstructorInjectionDemoButton
+import kotlinx.android.synthetic.main.activity_main.startMembersInjectionDemoButton
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,8 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startDemoButton.setOnClickListener {
+        startMembersInjectionDemoButton.setOnClickListener {
             val intent = Intent(this, MembersInjectionDemoActivity::class.java)
+            startActivity(intent)
+        }
+
+        startConstructorInjectionDemoButton.setOnClickListener {
+            val intent = Intent(this, ConstructorInjectionDemoActivity::class.java)
             startActivity(intent)
         }
     }
