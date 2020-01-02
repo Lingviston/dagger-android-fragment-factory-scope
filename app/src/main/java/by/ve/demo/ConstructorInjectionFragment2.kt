@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.ve.demo.di.dependencies.PrintableDependency
 import kotlinx.android.synthetic.main.fragment_dependencies.dependenciesView
+import kotlinx.android.synthetic.main.fragment_dependencies.fragmentName
 import javax.inject.Inject
 
 
-class ConstructorInjectionFragment @Inject constructor(
+class ConstructorInjectionFragment2 @Inject constructor(
     private val dependencies: Set<@JvmSuppressWildcards PrintableDependency>
 ) : Fragment() {
 
@@ -22,6 +23,7 @@ class ConstructorInjectionFragment @Inject constructor(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fragmentName.text = javaClass.simpleName
         dependenciesView.text = dependencies.map { it.describe() }.sorted().joinToString(
             separator = "\n"
         )

@@ -8,13 +8,13 @@ import dagger.android.ContributesAndroidInjector
 
 
 @Module
-interface FragmentBindingModule {
+interface FragmentContributorModule {
 
     @FragmentScope
     @ContributesAndroidInjector(modules = [DependenciesBindingModule::class])
     fun contributeMembersInjectionFragment(): MembersInjectionFragment
 
     @FragmentScope
-    @ContributesAndroidInjector(modules = [DependenciesBindingModule::class])
+    @ContributesAndroidInjector(modules = [DependenciesBindingModule::class, FragmentsBindingModule::class])
     fun contributeFragmentFactory(): ScopedFragmentFactory.FragmentProviders
 }

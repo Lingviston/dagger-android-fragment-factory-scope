@@ -24,14 +24,14 @@ class ConstructorInjectionDemoActivity : AppCompatActivity() {
                     R.id.fragment1,
                     scopedFragmentFactory.instantiate(
                         classLoader,
-                        ConstructorInjectionFragment::class.java.name
+                        ConstructorInjectionFragment1::class.java.name
                     )
                 )
                 .replace(
                     R.id.fragment2,
                     scopedFragmentFactory.instantiate(
                         classLoader,
-                        ConstructorInjectionFragment::class.java.name
+                        ConstructorInjectionFragment2::class.java.name
                     )
                 )
                 .commit()

@@ -1,7 +1,7 @@
 package by.ve.demo.di
 
 import android.app.Application
-import by.ve.demo.di.modules.ActivityBindingModule
+import by.ve.demo.di.modules.ActivityContributorModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
-        ActivityBindingModule::class
+        ActivityContributorModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

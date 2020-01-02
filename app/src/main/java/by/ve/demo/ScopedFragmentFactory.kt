@@ -6,25 +6,24 @@ import dagger.android.DispatchingAndroidInjector
 import javax.inject.Inject
 import javax.inject.Provider
 
-
 class ScopedFragmentFactory @Inject constructor(
     private val androidInjector: DispatchingAndroidInjector<Any>
 ) : FragmentFactory() {
 
     private val providers = FragmentProviders()
 
-    override fun instantiate(classLoader: ClassLoader, className: String): Fragment =
-        when (loadFragmentClass(classLoader, className)) {
-            ConstructorInjectionFragment::class.java -> {
-                androidInjector.inject(providers)
-                providers.fragmentProvider.get()
-            }
-            else -> super.instantiate(classLoader, className)
-        }
+    override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
+        androidInjector.inject(providers)
+
+        val clazz = loadFragmentClass(classLoader, className)
+        return providers[clazz]?.get() ?: super.instantiate(classLoader, className)
+    }
 
     class FragmentProviders {
 
         @Inject
-        lateinit var fragmentProvider: Provider<ConstructorInjectionFragment>
+        lateinit var fragmentProviders: MutableMap<Class<out Fragment>, Provider<Fragment>>
+
+        operator fun get(clazz: Class<out Fragment>) = fragmentProviders[clazz]
     }
 }

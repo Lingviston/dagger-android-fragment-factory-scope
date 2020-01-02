@@ -8,13 +8,13 @@ import dagger.android.ContributesAndroidInjector
 
 
 @Module
-interface ActivityBindingModule {
+interface ActivityContributorModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = [FragmentBindingModule::class])
+    @ContributesAndroidInjector(modules = [FragmentContributorModule::class])
     fun contributeMembersInjectionDemoActivity(): MembersInjectionDemoActivity
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = [FragmentBindingModule::class])
+    @ContributesAndroidInjector(modules = [FragmentContributorModule::class])
     fun contributeConstructorInjectionDemoActivity(): ConstructorInjectionDemoActivity
 }
