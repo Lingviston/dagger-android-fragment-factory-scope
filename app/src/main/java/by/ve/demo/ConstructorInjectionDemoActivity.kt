@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import by.ve.demo.di.dependencies.ActivityScopedDependency
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_fragments_demo.activityDependency
+import kotlinx.android.synthetic.main.activity_fragments_demo.reinflate
 import javax.inject.Inject
 
 
@@ -24,24 +25,32 @@ class ConstructorInjectionDemoActivity : AppCompatActivity() {
 
         activityDependency.text = activityScopedDependency.describe()
 
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(
-                    R.id.fragment1,
-                    scopedFragmentFactory.instantiate(
-                        classLoader,
-                        ConstructorInjectionFragment1::class.java.name
-                    )
-                )
-                .replace(
-                    R.id.fragment2,
-                    scopedFragmentFactory.instantiate(
-                        classLoader,
-                        ConstructorInjectionFragment2::class.java.name
-                    )
-                )
-                .commit()
+        reinflate.setOnClickListener {
+            inflateFragments()
         }
+
+        if (savedInstanceState == null) {
+            inflateFragments()
+        }
+    }
+
+    private fun inflateFragments() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(
+                R.id.fragment1,
+                scopedFragmentFactory.instantiate(
+                    classLoader,
+                    ConstructorInjectionFragment1::class.java.name
+                )
+            )
+            .replace(
+                R.id.fragment2,
+                scopedFragmentFactory.instantiate(
+                    classLoader,
+                    ConstructorInjectionFragment2::class.java.name
+                )
+            )
+            .commit()
     }
 }

@@ -6,14 +6,15 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/startMembersInjectionDemoButton"
+        android:id="@+id/startMembersInjectionDemo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start_demo" />
+        android:text="@string/members_injection_demo" />
 
     <Button
-        android:id="@+id/startConstructorInjectionDemoButton"
+        android:id="@+id/startConstructorInjectionDemo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start_demo" />
+        android:layout_marginTop="@dimen/spacing_16"
+        android:text="@string/constructor_injection_demo" />
 </LinearLayout>
