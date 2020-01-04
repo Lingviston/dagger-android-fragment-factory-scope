@@ -1,7 +1,7 @@
 package by.ve.demo.di.modules
 
-import by.ve.demo.MembersInjectionFragment
-import by.ve.demo.ScopedFragmentFactory
+import by.ve.demo.ui.membersinjection.MembersInjectionFragment
+import by.ve.demo.di.ScopedFragmentFactory
 import by.ve.demo.di.scopes.FragmentScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

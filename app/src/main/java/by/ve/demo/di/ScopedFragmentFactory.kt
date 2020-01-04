@@ -1,4 +1,4 @@
-package by.ve.demo
+package by.ve.demo.di
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory

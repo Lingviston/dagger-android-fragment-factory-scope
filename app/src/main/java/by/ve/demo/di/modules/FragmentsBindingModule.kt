@@ -1,8 +1,8 @@
 package by.ve.demo.di.modules
 
 import androidx.fragment.app.Fragment
-import by.ve.demo.ConstructorInjectionFragment1
-import by.ve.demo.ConstructorInjectionFragment2
+import by.ve.demo.ui.constructorinjection.ConstructorInjectionFragment1
+import by.ve.demo.ui.constructorinjection.ConstructorInjectionFragment2
 import by.ve.demo.di.key.FragmentKey
 import dagger.Binds
 import dagger.Module

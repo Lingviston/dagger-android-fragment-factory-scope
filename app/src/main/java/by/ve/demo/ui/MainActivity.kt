@@ -1,8 +1,11 @@
-package by.ve.demo
+package by.ve.demo.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import by.ve.demo.ui.constructorinjection.ConstructorInjectionDemoActivity
+import by.ve.demo.ui.membersinjection.MembersInjectionDemoActivity
+import by.ve.demo.R
 import kotlinx.android.synthetic.main.activity_main.startConstructorInjectionDemo
 import kotlinx.android.synthetic.main.activity_main.startMembersInjectionDemo
 

@@ -1,7 +1,9 @@
-package by.ve.demo
+package by.ve.demo.ui.constructorinjection
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import by.ve.demo.R
+import by.ve.demo.di.ScopedFragmentFactory
 import by.ve.demo.di.dependencies.ActivityScopedDependency
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_fragments_demo.activityDependency

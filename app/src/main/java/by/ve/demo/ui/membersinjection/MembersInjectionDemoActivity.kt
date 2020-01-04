@@ -1,6 +1,7 @@
-package by.ve.demo
+package by.ve.demo.ui.membersinjection
 
 import android.os.Bundle
+import by.ve.demo.R
 import by.ve.demo.di.dependencies.ActivityScopedDependency
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_fragments_demo.activityDependency

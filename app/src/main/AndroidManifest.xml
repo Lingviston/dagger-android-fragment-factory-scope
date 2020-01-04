@@ -12,17 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MembersInjectionDemoActivity"
+            android:name=".ui.membersinjection.MembersInjectionDemoActivity"
             android:label="@string/members_injection_demo" />
         <activity
-            android:name=".ConstructorInjectionDemoActivity"
+            android:name=".ui.constructorinjection.ConstructorInjectionDemoActivity"
             android:label="@string/constructor_injection_demo" />
     </application>
 </manifest>
