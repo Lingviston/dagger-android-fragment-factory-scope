@@ -1,5 +1,5 @@
 # Scoped constructor injection into fragments, using dagger-android
-A POC project to demonstrate scoped dependencies injection into fragments via constructor, using dagger-android, as part of the article https://medium.com/p/311c0258d678
+A POC project to demonstrate scoped dependencies injection into fragments via constructor using dagger-android. You can read more in https://proandroiddev.com/constructor-injection-into-fragments-with-respect-of-scopes-311c0258d678
 
 ## Keypoints
 The demo consists of two parts:
